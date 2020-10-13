@@ -61,7 +61,7 @@ class Body extends StatelessWidget {
                             ),
                           ),
                         Container(
-                        padding: EdgeInsets.only(bottom: 20),
+                        padding: EdgeInsets.only(bottom: 30),
                         height: 220,
                         width: 240,
                         child: ListView(
@@ -76,50 +76,56 @@ class Body extends StatelessWidget {
                             image: AssetImage(product.image),
                           ),*/
                       ),
-                        Container(
-                          padding: EdgeInsets.only(top: 20, bottom: 20),
-                          decoration: BoxDecoration(
-                            color: Colors.black12,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(24),
-                              topRight: Radius.circular(24),
-                            ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: SizedBox(
+                          height: 10,
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(24),
+                            topRight: Radius.circular(24),
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Text(
-                                      product.title,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline4
-                                          .copyWith(
-                                              color: Colors.deepPurple,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.bold),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.all(20),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    product.title,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline4
+                                        .copyWith(
+                                            color: Colors.deepPurple,
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 10,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        left: 10,
-                                      ),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment
-                                            .start,
-                                        children: <Widget>[
-                                          SmoothStarRating(
-                                              allowHalfRating: false,
-                                              onRated: (v) {},
-                                              starCount: 1,
-                                              rating: product.rating,
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        SmoothStarRating(
+                                            allowHalfRating: false,
+                                            onRated: (v) {},
+                                            starCount: 1,
+                                            rating: product.rating,
                                               size: 20.0,
                                               isReadOnly: true,
                                               color: Colors.yellow,
@@ -210,38 +216,115 @@ class Body extends StatelessWidget {
                                     ),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      left: 10, right:10, bottom: 10),
+                                      left: 10, right: 10, bottom: 22),
                                   child:
-                                    Row(
-                                      children: <Widget>[
-                                        SizedBox(width: 12, height: 5),
-                                        ColorDot(
-                                          color: Colors.yellow,
-                                          isSelected: true,
-                                        ),
-                                        SizedBox(width: 12, height: 5),
-                                        ColorDot(
-                                          color: Colors.red,
-                                          isSelected: true,
-                                        ),
-                                        SizedBox(width: 12, height: 5),
-                                        ColorDot(
-                                          color: Colors.purple,
-                                          isSelected: true,
-                                        ),
-                                        SizedBox(width: 12, height: 5),
-                                        ColorDot(
-                                          color: Colors.blue,
-                                          isSelected: true,
-                                        ),
-                                      ],
-                                    ),
+                                  Row(
+                                    children: <Widget>[
+                                      SizedBox(width: 12, height: 5),
+                                      ColorDot(
+                                        color: Colors.yellow,
+                                        isSelected: true,
+                                      ),
+                                      SizedBox(width: 12, height: 5),
+                                      ColorDot(
+                                        color: Colors.red,
+                                        isSelected: true,
+                                      ),
+                                      SizedBox(width: 12, height: 5),
+                                      ColorDot(
+                                        color: Colors.purple,
+                                        isSelected: true,
+                                      ),
+                                      SizedBox(width: 12, height: 5),
+                                      ColorDot(
+                                        color: Colors.blue,
+                                        isSelected: true,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                   ],
                                 ),
-
                               ),
 
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.grey,
+                                  ),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(24),
+                                    topRight: Radius.circular(24),
+                                  ),
+                                ),
+                                child:
+                                Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                        "\$ ${product.price}",
+                                        style: Theme
+                                            .of(context)
+                                            .textTheme
+                                            .headline4
+                                            .copyWith(
+                                            color: Colors.black,
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+
+                                      Container(
+                                        //padding: EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                          color: Colors.black12,
+                                          border: Border.all(
+                                            color: Colors.black12,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                              24),
+                                        ),
+                                        child:
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, right: 10
+                                          ),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            mainAxisAlignment: MainAxisAlignment
+                                                .start,
+                                            children: <Widget>[
+                                              IconButton(icon: Icon(
+                                                  Icons.shopping_cart,
+                                                  color: Colors
+                                                      .deepPurpleAccent),
+                                                  onPressed: null),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10, top: 15, right: 5
+                                                ),
+                                                child:
+                                                Text(
+                                                  "Add To Cart",
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight
+                                                          .bold,
+                                                      color: Colors
+                                                          .deepPurpleAccent),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
