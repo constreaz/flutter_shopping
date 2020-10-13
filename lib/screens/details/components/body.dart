@@ -27,19 +27,6 @@ class Body extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Container(
-                    //margin: EdgeInsets.only(top: size.height * 0.32),
-                    /*padding: EdgeInsets.only(
-                      top: size.height * 0,
-                      left: kDefaultPadding,
-                      right: kDefaultPadding,
-                    ),
-                    decoration: BoxDecoration(
-                    color: Colors.white38,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
-                    ),
-                  ),*/
                     child: Column(
                       children: <Widget>[
                         if (product.discount > 0)
@@ -75,42 +62,55 @@ class Body extends StatelessWidget {
                           //padding: EdgeInsets.all(kDefaultPadding),
                           height: 220,
                           width: 240,
-                          child: Image(
-                            image: AssetImage(product.image),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              Image(
+                                image: AssetImage(product.image),
+                              ),
+                            ],
                           ),
+                          /*Image(
+                            image: AssetImage(product.image),
+                          ),*/
                         ),
                         Container(
                           padding: EdgeInsets.only(top: 20, bottom: 20),
                           decoration: BoxDecoration(
-                            color: Colors.white38,
+                            color: Colors.black12,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(24),
                               topRight: Radius.circular(24),
                             ),
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Text(
-                                  product.title,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headline4
-                                      .copyWith(
-                                          color: Colors.deepPurple,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 10,
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                      product.title,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline4
+                                          .copyWith(
+                                              color: Colors.deepPurple,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                      ),
+                                      child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                     children: <Widget>[
                                       SmoothStarRating(
                                           allowHalfRating: false,
@@ -129,11 +129,22 @@ class Body extends StatelessWidget {
                                             color: Colors.black54),
                                       ),
                                     ],
-                                  ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
+                              ),
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(left:20),
+                                child: Text(
+                                  product.description,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                      color: Colors.deepPurple, fontSize: 15),
+                                ),
+                              ),
+                            ],),
                         ),
                       ],
                     ),
