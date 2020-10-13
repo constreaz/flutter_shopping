@@ -45,7 +45,7 @@ List<Product> products = [
       price: 290.00,
       size: 10,
       discount: 0,
-      rating: 0.0,
+      rating: 3.5,
       description: dummyText,
       image: "assets/images/sneaker_03.png",
       color: Color(0xFF989493)),
