@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
+import 'color_and_size.dart';
+
 class Body extends StatelessWidget {
   final Product product;
 
@@ -192,6 +194,54 @@ class Body extends StatelessWidget {
                                   ],
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20, top: 30),
+                                child:
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      "Available Color:",
+                                      style: TextStyle(
+                                        color: Colors.black38,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right:10, bottom: 10),
+                                  child:
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 12, height: 5),
+                                        ColorDot(
+                                          color: Colors.yellow,
+                                          isSelected: true,
+                                        ),
+                                        SizedBox(width: 12, height: 5),
+                                        ColorDot(
+                                          color: Colors.red,
+                                          isSelected: true,
+                                        ),
+                                        SizedBox(width: 12, height: 5),
+                                        ColorDot(
+                                          color: Colors.purple,
+                                          isSelected: true,
+                                        ),
+                                        SizedBox(width: 12, height: 5),
+                                        ColorDot(
+                                          color: Colors.blue,
+                                          isSelected: true,
+                                        ),
+                                      ],
+                                    ),
+                                ),
+                                  ],
+                                ),
+
+                              ),
+
                             ],
                           ),
                         ),
