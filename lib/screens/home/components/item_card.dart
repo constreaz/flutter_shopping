@@ -27,7 +27,7 @@ class ItemCard extends StatelessWidget {
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
@@ -37,12 +37,19 @@ class ItemCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     if (product.discount > 0)
-                      Align(
-                        alignment: Alignment.topLeft,
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                            color: Colors.blueAccent,
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                        ),
                         child: Text(
                           "${product.discount}%",
                           style: TextStyle(
-                              backgroundColor: Colors.lightBlueAccent,
+                              backgroundColor: Colors.blueAccent,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),
@@ -94,10 +101,10 @@ class ItemCard extends StatelessWidget {
               child: Text(
                 // products is out demo list
                 product.title,
-                style: TextStyle(fontSize: 15, color: Colors.deepPurple),
+                style: TextStyle(fontSize: 18, color: Colors.deepPurple),
               ),
             ),
-            Text(
+            Text("\$" +
               "\$${product.price}",
               style: TextStyle(
                   fontSize: 20,
