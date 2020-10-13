@@ -104,7 +104,7 @@ class ItemCard extends StatelessWidget {
                 style: TextStyle(fontSize: 18, color: Colors.deepPurple),
               ),
             ),
-            Text("\$" +
+            Text(
               "\$${product.price}",
               style: TextStyle(
                   fontSize: 20,
