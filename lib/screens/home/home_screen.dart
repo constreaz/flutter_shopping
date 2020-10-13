@@ -72,13 +72,6 @@ class _HomeScreen extends State<HomeScreen> {
           ),
           onPressed: () {},
         ),
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/cart.svg",
-            color: Colors.black87,
-          ),
-          onPressed: () {},
-        ),
         SizedBox(width: kDefaultPadding / 2)
       ],
     );

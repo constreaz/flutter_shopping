@@ -6,7 +6,16 @@ import 'package:shop_app/screens/details/details_screen.dart';
 import 'categories.dart';
 import 'item_card.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  String _valSort;
+
+  List _listSort = ["Price", "Name"];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,12 +23,32 @@ class Body extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          child: Text(
-            "Our Product",
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(fontWeight: FontWeight.bold),
+          child: Row(
+            children: <Widget>[
+              Text(
+                "Our Product",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              Padding(padding: EdgeInsets.only(right: 160)),
+              DropdownButton(
+                hint: Text("Sort by"),
+                value: _valSort,
+                items: _listSort.map((value) {
+                  return DropdownMenuItem(
+                    child: Text(value),
+                    value: value,
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    _valSort = value;
+                  });
+                },
+              ),
+            ],
           ),
         ),
         Categories(),

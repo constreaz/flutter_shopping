@@ -13,12 +13,19 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+
         Container(
           padding: EdgeInsets.all(0),
-          child: IconButton(
-            icon: (_isFavorite ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
-            color: Colors.red[500],
+          child:
+          IconButton(
+            icon: (_isFavorite ? Icon(Icons.favorite_rounded, color: Colors.red) : Icon(Icons.favorite, color: Colors.black12)),
             onPressed: _toggleFavorite,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(
+              color: Colors.transparent,
+            ),
           ),
         ),
         SizedBox(
