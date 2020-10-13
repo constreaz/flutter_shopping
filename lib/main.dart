@@ -8,8 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  int _selectedIndex = 0;
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
