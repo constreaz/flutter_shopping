@@ -59,21 +59,21 @@ class Body extends StatelessWidget {
                             ),
                           ),
                         Container(
-                          //padding: EdgeInsets.all(kDefaultPadding),
-                          height: 220,
-                          width: 240,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: <Widget>[
-                              Image(
-                                image: AssetImage(product.image),
-                              ),
-                            ],
-                          ),
-                          /*Image(
+                        padding: EdgeInsets.only(bottom: 20),
+                        height: 220,
+                        width: 240,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            Image(
+                              image: AssetImage(product.image),
+                            ),
+                          ],
+                        ),
+                        /*Image(
                             image: AssetImage(product.image),
                           ),*/
-                        ),
+                      ),
                         Container(
                           padding: EdgeInsets.only(top: 20, bottom: 20),
                           decoration: BoxDecoration(
@@ -109,34 +109,35 @@ class Body extends StatelessWidget {
                                       ),
                                       child: Row(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      SmoothStarRating(
-                                          allowHalfRating: false,
-                                          onRated: (v) {},
-                                          starCount: 1,
-                                          rating: product.rating,
-                                          size: 20.0,
-                                          isReadOnly: true,
-                                          color: Colors.yellow,
-                                          borderColor: Colors.yellowAccent,
-                                          spacing: 1.0),
-                                      Text(
-                                        "(${product.rating})",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black54),
-                                      ),
-                                    ],
+                                        CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .start,
+                                        children: <Widget>[
+                                          SmoothStarRating(
+                                              allowHalfRating: false,
+                                              onRated: (v) {},
+                                              starCount: 1,
+                                              rating: product.rating,
+                                              size: 20.0,
+                                              isReadOnly: true,
+                                              color: Colors.yellow,
+                                              borderColor: Colors.yellowAccent,
+                                              spacing: 1.0),
+                                          Text(
+                                            "(${product.rating})",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black54),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only(left:20),
+                                padding: const EdgeInsets.only(
+                                    left: 20, bottom: 30),
                                 child: Text(
                                   product.description,
                                   textAlign: TextAlign.start,
@@ -144,9 +145,60 @@ class Body extends StatelessWidget {
                                       color: Colors.deepPurple, fontSize: 15),
                                 ),
                               ),
-                            ],),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      child: Text(
+                                        "Size:  ",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black38,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.all(6),
+                                      decoration: BoxDecoration(
+                                          color: Colors.lightBlueAccent,
+                                          border: Border.all(
+                                            color: Colors.lightBlueAccent,
+                                          ),
+                                          borderRadius:
+                                          BorderRadius.all(
+                                              Radius.circular(8))),
+                                      child: Text(
+                                        " US ${product.size}  ",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    for (int i = 1; i < 4; i++)
+                                      Container(
+                                        padding: EdgeInsets.only(left:20),
+                                        child: Text(
+                                          " US ${product.size + i}  ",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
+                    ),
+                  ),
+                ],
                     ),
                   ),
                 ],
@@ -184,9 +236,8 @@ class Body extends StatelessWidget {
               ],
             ), */
             )
-          ],
-        ),
-      ),
+
+
     );
   }
 }

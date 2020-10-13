@@ -23,7 +23,7 @@ List<Product> products = [
       id: 1,
       title: "Nike Air Max 20",
       price: 240.00,
-      size: 8,
+      size: 6,
       discount: 30,
       rating: 4.5,
       description: dummyText,
