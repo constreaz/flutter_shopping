@@ -30,10 +30,20 @@ class DetailsScreen extends StatelessWidget {
         onPressed: () => Navigator.pop(context),
       ),
       actions: <Widget>[
-        IconButton(
+        Container(
+          padding: EdgeInsets.all(8),
+          height: 32,
+          width: 32,
+          decoration: BoxDecoration(
+            color: Color(0xFFFF6464),
+            shape: BoxShape.circle,
+          ),
+          child: SvgPicture.asset("assets/icons/heart.svg"),
+        ),
+        /*IconButton(
           icon: SvgPicture.asset("assets/icons/heart.svg"),
           onPressed: () {},
-        ),
+        ),*/
         SizedBox(width: kDefaultPadding / 2)
       ],
     );

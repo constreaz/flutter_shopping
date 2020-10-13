@@ -16,11 +16,19 @@ class _CategoriesState extends State<Categories> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: SizedBox(
-        height: 25,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: categories.length,
-          itemBuilder: (context, index) => buildCategory(index),
+        height: 26,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(
+              color: Colors.transparent,
+            ),
+          ),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: categories.length,
+            itemBuilder: (context, index) => buildCategory(index),
+          ),
         ),
       ),
     );

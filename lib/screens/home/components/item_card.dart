@@ -32,7 +32,7 @@ class ItemCard extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Container(
-                margin: EdgeInsets.only(right: 0),
+                //margin: EdgeInsets.only(right: 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -40,16 +40,16 @@ class ItemCard extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                            color: Colors.blueAccent,
+                            color: Colors.lightBlueAccent,
                             border: Border.all(
-                              color: Colors.blueAccent,
+                              color: Colors.lightBlueAccent,
                             ),
                             borderRadius: BorderRadius.all(Radius.circular(10))
                         ),
                         child: Text(
                           "${product.discount}%",
                           style: TextStyle(
-                              backgroundColor: Colors.blueAccent,
+                              backgroundColor: Colors.lightBlueAccent,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),

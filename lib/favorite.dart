@@ -21,15 +21,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
             icon: (_isFavorite ? Icon(Icons.favorite_rounded, color: Colors.red) : Icon(Icons.favorite, color: Colors.black12)),
             onPressed: _toggleFavorite,
           ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            border: Border.all(
-              color: Colors.transparent,
-            ),
-          ),
-        ),
-        SizedBox(
-          width: 18,
         ),
       ],
     );
